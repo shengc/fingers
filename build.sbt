@@ -21,6 +21,15 @@ lazy val commonSettings = Seq(
 , crossScalaVersions := Seq("2.12.1"/*, "2.11.8"*/)
 , unmanagedSourceDirectories in Compile := Seq( (scalaSource in Compile).value )
 , unmanagedSourceDirectories in Test := Seq( (scalaSource in Test).value )
+, scalacOptions ++= Seq(
+    "-unchecked"
+  , "-feature"
+  , "-deprecation"
+  , "-Xfatal-warnings"
+  , "-Ywarn-dead-code"
+  , "-Ywarn-inaccessible"
+  )
+, javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 )
 
 lazy val core = project.in(file("fingers-core")).settings(commonSettings: _*)
