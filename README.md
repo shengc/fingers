@@ -66,3 +66,13 @@ fMaxQ.toList // --> (4,3,2,1)
 val fMinMaxQ = FMinMaxQueue(ls: _*)
 fMinMaxQ.toList // --> ((1,2,3,4), (4,3,2,1))
 ```
+
+## Usage
+```sbt
+resolvers += "bintray-shengc" at "http://dl.bintray.com/shengc/maven"
+
+libraryDependencies += "com.shengc" %% "fingers" % "0.0.1-77efba8" 
+```
+
+Due to the issue https://github.com/shengc/fingers/issues/1, build is for
+now only available for Scala 2.12 .
